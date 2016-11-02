@@ -1,0 +1,23 @@
+/* Base */
+body {
+  font-family: sans-serif, Arial;
+}
+/* Layout */
+/* Module */
+.contacts-list {
+  width: 300px;
+}
+
+.contacts-list > header {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.contacts-list > p {
+  font-size: 1rem;
+  font-family: sans-serif, Arial;
+}
+
+/* Most of the CSS should exist here */
+/* State */
+/* Theme */
