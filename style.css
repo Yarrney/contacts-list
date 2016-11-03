@@ -10,11 +10,13 @@ body {
 }
 
 /* Layout */
-
+/*
+  Layout rules in this case will not be used, as the
+  task is to design
+*/
 
 /* Module */
 .contacts {
-  /*position: fixed;*/
   bottom: 0;
   position: fixed;
   display: flex;
@@ -73,28 +75,36 @@ body {
 }
 
 .contacts-search {
-  flex: 1;
+  display: inline-flex;
+  align-items:center;
+  justify-content: flex-start;
   width: 100%;
   margin: 0;
-}
-
-.contacts-search > input {
-  width: 100%;
   background-color: #f4f3f1;
   border: 2px solid #b4b4b6;
   border-bottom: none;
   border-top: none;
+
+  /* box-sizing:border-box used to maintain width*/
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.contacts-search > input {
+  flex: 16;
+  padding: 0;
+  background-color: inherit;
+  border: none;
   font-size: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .icon{
-  position: absolute;
-  top: 50%;
-  margin-left: 17px;
-  margin-top: 17px;
-  z-index: 1;
+  flex: 1;
+  padding-left: 5%;
   color: #4f5b66;
 }
 
@@ -108,7 +118,7 @@ search normal text: #b4b4b6
 search normal background: #f4f3f1
 alternate contact bakground: #f7f6f4
 contact background: #f2f1ef
-
 */
+
 /* State */
 /* Theme */

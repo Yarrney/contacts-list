@@ -16,3 +16,5 @@ data.images.forEach( function(obj) {
 //contacts.user.username
 //contacts.user.status
 //contacts.user.profileimage
+
+// Toggle contacts list
