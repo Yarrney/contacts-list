@@ -5,25 +5,43 @@
     <meta charset="UTF-8">
     <title>Contacts List Widget</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body>
-    <div class="contacts-list">
+    <div class="contacts">
+
       <header>
         <h4>My Contacts</h4>
         <a href="#" class="contacts-close"></a>
       </header>
+
       <!-- LIST CONTACTS -->
-      <div class="contact">
-        <img class="avatar" href="#" />
-        <p>Contact Name</p>
-        <a href="#" class="status-offline"></a>
-      </div>
+      <ul>
+        <li class="contact">
+          <img class="contact-image" href="#" alt="D" />
+          <p class="contact-name">Contact Name</p>
+          <div class="contact-status-online"></div>
+        </li>
+        <li class="contact">
+          <img class="contact-image" href="#" alt="D" />
+          <p class="contact-name">Contact Name</p>
+          <div class="contact-status-online"></div>
+        </li>
+        <li class="contact">
+          <img class="contact-image" href="#" alt="D" />
+          <p class="contact-name">Contact Name</p>
+          <div class="contact-status-online"></div>
+        </li>
+      </ul>
+
       <!-- SEARCH BAR -->
-      <form action="#" method="post">
-        <input /> search
+      <form class="contacts-search" action="#" method="post">
+        <span class="icon"><i class="fa fa-search"></i></span>
+        <input type="search" id="search" placeholder="Search..." />
       </form>
-    </div>
+
+    </div> <!-- end contacts  -->
 
     <!-- LOAD JS SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
