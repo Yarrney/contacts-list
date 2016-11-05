@@ -1,51 +1,51 @@
-{
-	"user" : {
-		"username" : "Demetrix GOW",
-		"status" : "Offline",
-		"profileimage" : "http://placekitten.com/58/58"
-	},
-	"user" : {
-		"username" : "Diego Moliterno",
-		"status" : "Online"
-	},
-	"user" : {
-		"username" : "Emily Ng",
-		"status" : "Offline",
-		"profileimage" : "http://placekitten.com/58/58"
-	},
-	"user" : {
-		"username" : "Andrias Taiwan",
-		"status" : "Offline"
-	},
-	"user" : {
-		"username" : "Che Ness",
-		"status" : "Online"
-	},
-	"user" : {
-		"username" : "Joe Lonie",
-		"status" : "Online"
-	},
-	"user" : {
-		"username" : "Tim Stewart",
-		"status" : "Offline"
-	},
-	"user" : {
-		"username" : "Ben Sciascia",
-		"status" : "Offline",
-		"profileimage" : "http://placekitten.com/58/58"
-	},
-	"user" : {
-		"username" : "Karl Steven",
-		"status" : "Online",
-		"profileimage" : "http://placekitten.com/58/58"
-	},
-	"user" : {
-		"username" : "Ian Jones",
-		"status" : "Online",
-		"profileimage" : "http://placekitten.com/58/58"
-	},
-	"user" : {
-		"username" : "Nick Atkinson",
-		"status" : "Offline"
-	}
-}
+[
+	 {
+			"username" : "Demetrix GOW",
+			"status" : "Offline",
+			"profileimage" : "http://placekitten.com/58/58"
+		},
+		{
+			"username" : "Diego Moliterno",
+			"status" : "Online"
+		},
+		{
+			"username" : "Emily Ng",
+			"status" : "Offline",
+			"profileimage" : "http://placekitten.com/58/58"
+		},
+		{
+			"username" : "Andrias Taiwan",
+			"status" : "Offline"
+		},
+		{
+			"username" : "Che Ness",
+			"status" : "Online"
+		},
+		{
+			"username" : "Joe Lonie",
+			"status" : "Online"
+		},
+		{
+			"username" : "Tim Stewart",
+			"status" : "Offline"
+		},
+		{
+			"username" : "Ben Sciascia",
+			"status" : "Offline",
+			"profileimage" : "http://placekitten.com/58/58"
+		},
+		{
+			"username" : "Karl Steven",
+			"status" : "Online",
+			"profileimage" : "http://placekitten.com/58/58"
+		},
+		{
+			"username" : "Ian Jones",
+			"status" : "Online",
+			"profileimage" : "http://placekitten.com/58/58"
+		},
+		{
+			"username" : "Nick Atkinson",
+			"status" : "Offline"
+		}
+]
