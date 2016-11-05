@@ -9,43 +9,47 @@
   </head>
 
   <body>
-    <div class="contacts">
+    <div class="contacts-module">
 
-      <header>
+      <header onclick="slideToggle()">
         <h4>My Contacts</h4>
-        <a href="#" class="contacts-close"></a>
       </header>
 
       <!-- LIST CONTACTS -->
-      <ul>
-        <li class="contact">
-          <img class="contact-image" href="#" alt="D" />
-          <p class="contact-name">Contact Name</p>
-          <div class="contact-status-online"></div>
-        </li>
-        <li class="contact">
-          <img class="contact-image" href="#" alt="D" />
-          <p class="contact-name">Contact Name</p>
-          <div class="contact-status-online"></div>
-        </li>
-        <li class="contact">
-          <img class="contact-image" href="#" alt="D" />
-          <p class="contact-name">Contact Name</p>
-          <div class="contact-status-online"></div>
-        </li>
-      </ul>
+      <div id="contacts-list" class="contacts-list contacts-hide">
 
-      <!-- SEARCH BAR -->
+        <ul class="contacts">
+
+          <li class="contact">
+            <div class="contact-image">
+              <div class="contact-placeholer">
+                Contact Name
+              </div>
+            </div>
+            <p class="contact-name">Contact Name</p>
+            <div class="contact-status-online"></div>
+          </li>
+          <li clas="contact">
+            <div class="contact-image">
+              <img src="http://placekitten.com/58/58" />
+            </div>
+            <p class="contact-name">Contact Name</p>
+            <div class="contact-status-online"></div>
+          </li>
+
+        </ul>
+
+        <!-- SEARCH BAR -->
         <form class="contacts-search" action="#" method="post">
-          <span class="icon"><i class="fa fa-search"></i></span>
+          <span class="search-icon"><i class="fa fa-search"></i></span>
           <input type="search" id="search" placeholder="Search..." />
         </form>
 
-    </div> <!-- end contacts  -->
+      </div> <!-- end contact-list -->
+    </div> <!-- end contacts -->
 
     <!-- LOAD JS SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script type="text/javascript" src="contact-list-users.json"></script>
+    <script type="text/json" src="contact-list-users.json"></script>
     <script src="script.js"></script>
   </body>
 

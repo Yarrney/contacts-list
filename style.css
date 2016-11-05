@@ -1,5 +1,14 @@
 /* Base */
 
+/*active #76bd53 Green
+missing image color: #40444f grey
+search hovered text: #4b4b4b
+search hovered background: #ffffff
+search normal text: #b4b4b6
+search normal background: #f4f3f1
+alternate contact bakground: #f7f6f4
+contact background: #f2f1ef*/
+
 html{
   height: 100%;
 }
@@ -10,46 +19,56 @@ body {
 }
 
 /* Layout */
-/*
-  Layout rules in this case will not be used, as the
-  task is to design
-*/
+/* Layout styles specified in module styling */
 
 /* Module */
-.contacts {
+.contacts-module {
   bottom: 0;
   position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 300px;
+  height: 400px;
   flex: 1;
 }
 
-.contacts > ul {
-  margin: 0;
-  padding: 0;
-}
-
-.contacts > header {
+.contacts-module > header {
   background-color: #333742;
   color: #ffffff;
   padding-left: 10%;
 }
 
+.contacts-list {
+  height: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.contacts {
+  margin: 0;
+  padding: 0;
+}
+
 .contact {
-    padding-left: 2.5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f2f1ef;
-    border: 2px solid #b4b4b6;
-    border-top: none;
+  padding-left: 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f1ef;
+  border: 2px solid #b4b4b6;
+  border-top: none;
+}
+
+.contact:nth-child(even) {
+  background-color: #f7f6f4;
 }
 
 .contact-image {
-  width: 3rem;
-  height: 3rem;
+  width: 58px;
+  height: 58px;
   border: none;
   margin: 0.5rem;
 
@@ -58,8 +77,18 @@ body {
 
   font-size: 1.5rem;
   text-align: center;
-  line-height: 3rem;
+  line-height: 58px;
 }
+
+.contact-placeholder {
+    display:block;
+    visibility:hidden;
+}
+
+.contact-image:first-letter {
+    visibility:visible;
+}​
+
 
 .contact-name {
   flex: 2;
@@ -71,6 +100,14 @@ body {
   height: 0.6rem;
   border-radius: 0.3rem;
   background-color: #76bd53;
+  margin-right: 1rem;
+}
+
+.contact-status-offline {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  background-color: #B5B5B5;
   margin-right: 1rem;
 }
 
@@ -102,23 +139,15 @@ body {
   padding-bottom: 0.5rem;
 }
 
-.icon{
+.search-icon{
   flex: 1;
   padding-left: 5%;
   color: #4f5b66;
 }
 
-/* Most of the CSS should exist here
-
-active #76bd53 Green
-missing image color: #40444f grey
-search hovered text: #4b4b4b
-search hovered background: #ffffff
-search normal text: #b4b4b6
-search normal background: #f4f3f1
-alternate contact bakground: #f7f6f4
-contact background: #f2f1ef
-*/
-
 /* State */
+.contacts-hide {
+  height: 0;
+}
+
 /* Theme */
