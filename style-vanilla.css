@@ -1,13 +1,25 @@
 /* Base */
 
-/*active #76bd53 Green
-missing image color: #40444f grey
-search hovered text: #4b4b4b
+/*
+Offline indicator #B5B5B5
+Online indicator #67B642
+
+Image placeholder: #31343E
+Header: #272933
+
+Search bar: hovered
+search hovered text: #404040
 search hovered background: #ffffff
-search normal text: #b4b4b6
-search normal background: #f4f3f1
-alternate contact bakground: #f7f6f4
-contact background: #f2f1ef*/
+
+Search bar: normal
+search normal text: #9A9A98
+search normal background: #F2F1EE
+
+Contacts sections
+contact background: #ffffff
+alternate contact bakground: #F0EFEC
+
+*/
 
 html{
   height: 100%;
@@ -35,7 +47,7 @@ body {
 }
 
 .contacts-module > header {
-  background-color: #333742;
+  background-color: #272933;
   color: #ffffff;
   padding-left: 10%;
 }
@@ -50,7 +62,7 @@ body {
 
 .contacts-container {
   overflow: scroll;
-  height: 85%
+  height: 90%
 }
 
 .contacts {
@@ -66,6 +78,7 @@ body {
   background-color: #f2f1ef;
   border: 2px solid #b4b4b6;
   border-top: none;
+
 }
 
 .contact:last-child {
@@ -121,11 +134,11 @@ body {
   align-self: flex-end;
   justify-content: flex-start;
   width: 100%;
+  height: 40px;
   margin: 0;
   background-color: #f4f3f1;
   border: 2px solid #b4b4b6;
   border-bottom: none;
-  /*border-top: none;*/
 
   /* box-sizing:border-box used to maintain width*/
   -moz-box-sizing: border-box;
