@@ -1,43 +1,14 @@
 /* Base */
-
-html{
+html {
   height: 100%;
 }
-
 body {
   font-family: sans-serif, Arial;
   min-height: 100%;
 }
-
 /* Layout */
 /* Layout styles specified in module styling */
-
 /* Module */
-// Declare Sizes
-@module-width: 300px;
-@module-height: 400px;
-@search-height: 40px;
-
-// Declare Colours
-@offline-indicator: #B5B5B5;
-@online-indicator: #67B642;
-
-@image-placeholder-text: white;
-@image-placeholder-background: #31343E;
-
-@contacts-header-text: white;
-@contacts-header-background: #272933;
-
-@search-text: #9A9A98;
-@search-background: #F2F1EE;
-@search-text-hover: #404040;
-@search-background-hover: white;
-
-@contact-background: white;
-@contact-background-alt: #F0EFEC;
-@contact-border: #b4b4b6;
-
-// Contact module container
 .contacts-module {
   bottom: 0;
   position: fixed;
@@ -45,18 +16,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: @module-width;
-  height: @module-height;
+  width: 300px;
+  height: 400px;
   flex: 1;
 }
-
 .contacts-module > header {
-  background-color: @contacts-header-background;
-  color: @contacts-header-text;
+  background-color: #272933;
+  color: white;
   padding-left: 10%;
 }
-
-// Hide container (for css transition)
 .hide-container {
   height: 100%;
   -webkit-transition: all 1s ease-in-out;
@@ -64,112 +32,99 @@ body {
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
-
-// Contacts List (container and user items)
 .contacts-container {
   overflow: scroll;
   height: 90%;
-  >ul {
-    margin: 0;
-    padding: 0;
-  }
 }
-
+.contacts-container > ul {
+  margin: 0;
+  padding: 0;
+}
 .contact {
   padding-left: 2.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: @contact-background;
-  border: 2px solid @contact-border;
+  background-color: white;
+  border: 2px solid #b4b4b6;
   border-top: none;
 }
-
 .contact:last-child {
   border-bottom: none;
 }
-
 .contact:nth-child(even) {
-  background-color: @contact-background-alt;
+  background-color: #F0EFEC;
 }
-
 .contact-image {
   width: 58px;
   height: 58px;
   border: none;
   margin: 0.5rem;
-
   display: flex;
   justify-content: center;
-
-  background-color: @image-placeholder-background;
-  color: @image-placeholder-text;
+  background-color: #31343E;
+  color: white;
 }
-
 .contact-placeholder {
   font-size: 1.5rem;
   line-height: 58px;
 }
-
 .contact-name {
   flex: 2;
   margin-left: 1rem;
 }
-
 .contact-status {
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 0.3rem;
   margin-right: 1rem;
 }
-
 .contact-status-online {
-  .contact-status;
-  background-color: @online-indicator;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  margin-right: 1rem;
+  background-color: #67B642;
 }
-
 .contact-status-offline {
-  .contact-status;
-  background-color: @offline-indicator;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  margin-right: 1rem;
+  background-color: #B5B5B5;
 }
-
 .contacts-search {
   display: inline-flex;
-  align-items:center;
+  align-items: center;
   align-self: flex-end;
   width: 100%;
-  height: @search-height;
+  height: 40px;
   margin: 0;
-  background-color: @search-background;
-  border: 2px solid @contact-border;
+  background-color: #F2F1EE;
+  border: 2px solid #b4b4b6;
   border-bottom: none;
-
   /* box-sizing:border-box used to maintain width*/
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-
-  >input {
-    flex: 16;
-    padding: 0;
-    background-color: inherit;
-    border: none;
-    font-size: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  >i{
-    flex: 1;
-    padding-left: 5%;
-    color: @search-text;
-  }
 }
-
+.contacts-search > input {
+  flex: 16;
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.contacts-search > i {
+  flex: 1;
+  padding-left: 5%;
+  color: #9A9A98;
+}
 /* State */
 .contacts-hide {
   height: 0;
 }
-
 /* Theme */
