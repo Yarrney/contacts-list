@@ -14,10 +14,10 @@ body {
 
 /* Module */
 // Declare Sizes
-@module-width: 300px;
+@module-width: 280px;
 @module-height: 400px;
 @search-height: 40px;
-@contact-image-square: 58px;
+@contact-image-square: 40px;
 
 // Declare Colours
 @offline-indicator: #B5B5B5;
@@ -37,39 +37,51 @@ body {
 @contact-background: white;
 @contact-background-alt: #F0EFEC;
 @contact-border: #E4E2E0;
+@contact-text: #21242B;
 
 // General Module Styles
 .contacts-border{
   border: 2px solid @contact-border;
 }
 
-// MODULE LAYOUT
 // Contact module container
 .contacts-module {
   bottom: 0;
   position: fixed;
   right: 3rem;
+
+  display: -ms-flexbox; // IE10
   display: flex;
+
+  -ms-flex-direction: column; // IE10
   flex-direction: column;
+
+  -ms-flex-pack: end; // IE10
   justify-content: flex-end;
+
   width: @module-width;
   height: @module-height;
-  flex: 1;
-}
 
-.contacts-module > header {
-  background-color: @contacts-header-background;
-  color: @contacts-header-text;
-  padding-left: 10%;
+  -ms-flex: 1;
+  flex: 1;
+  header {
+    background-color: @contacts-header-background;
+    color: @contacts-header-text;
+    padding-left: 10%;
+      h4 {
+        margin: 0.8rem 0 0.8rem 0;
+        text-align: left;
+      }
+    }
 }
 
 // Hide container (for css transition)
 .hide-container {
   height: 100%;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 // Contacts List (container and user items)
@@ -84,9 +96,16 @@ body {
 
 .contact {
   padding-left: 2.5%;
+
+  display: -ms-flexbox; // IE10
   display: flex;
+
+  -ms-flex-align: center; // IE10
   align-items: center;
+
+  -ms-flex-pack: justify; // IE10
   justify-content: space-between;
+
   background-color: @contact-background;
   .contacts-border;
   border-top: none;
@@ -104,11 +123,18 @@ body {
   border: none;
   margin: 0.5rem;
 
+  display: -ms-flexbox; // IE10
   display: flex;
+
+  -ms-flex-pack: center; // IE10
   justify-content: center;
 
   background-color: @image-placeholder-background;
   color: @image-placeholder-text;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .contact__placeholder {
@@ -117,9 +143,11 @@ body {
 }
 
 .contact__name {
+  -ms-flex: 2;
   flex: 2;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   font-weight: bold;
+  color: @contact-text;
 }
 
 .contact__status {
@@ -130,9 +158,14 @@ body {
 }
 
 .contacts-search {
+  display: -ms-inline-flexbox; // IE10
   display: inline-flex;
-  align-items:center;
-  align-self: flex-end;
+  
+  // -ms-flex-align: center;
+  // align-items:center;
+  //
+  // -ms-flex-item-align: end;
+  // align-self: flex-end;
   width: 100%;
   height: @search-height;
   margin: 0;
@@ -153,24 +186,31 @@ body {
   }
 
   i{
+    -ms-flex: 1;
     flex: 1;
     padding-left: 5%;
   }
 }
 
 .contacts-search__field {
+  -ms-flex: 13;
   flex: 13;
   background-color: inherit;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+
+  // display: -ms-flexbox; // IE10
+  // display: flex;
+
+  // -ms-flex-align: center; // IE10
+  // align-items: center;
+
+  // -ms-flex-pack: start; // IE10
+  // justify-content: flex-start;
 }
 
 .contacts-search__label {
   position: absolute;
-  top: 25%;
-  line-height: 1.3;
+  font-size: 1em;
   left: 0;
 }
 
@@ -179,12 +219,11 @@ body {
   background-color: transparent;
   border: none;
   border-radius: 0;
-  font-size: 1rem;
-  line-height: 1.3;
+  font-size: 1em;
   font-weight: normal;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  position: relative;
+  position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
 
@@ -196,6 +235,7 @@ body {
   }
   &:valid{
     background-color: inherit;
+    color: inherit;
     +label {
       display: none;
     }
