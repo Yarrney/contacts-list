@@ -143,6 +143,8 @@ body {
 }
 
 .contact__name {
+  text-align: left;
+  margin: 0;
   -ms-flex: 2;
   flex: 2;
   margin-left: 0.5rem;
@@ -160,9 +162,9 @@ body {
 .contacts-search {
   display: -ms-inline-flexbox; // IE10
   display: inline-flex;
-  
-  // -ms-flex-align: center;
-  // align-items:center;
+
+  -ms-flex-align: center;
+  align-items:center;
   //
   // -ms-flex-item-align: end;
   // align-self: flex-end;
@@ -209,7 +211,9 @@ body {
 }
 
 .contacts-search__label {
-  position: absolute;
+  // position: absolute;
+  z-index: 1000;
+  margin: 0;
   font-size: 1em;
   left: 0;
 }

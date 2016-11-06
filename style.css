@@ -90,6 +90,8 @@ body {
   line-height: 40px;
 }
 .contact__name {
+  text-align: left;
+  margin: 0;
   -ms-flex: 2;
   flex: 2;
   margin-left: 0.5rem;
@@ -105,6 +107,8 @@ body {
 .contacts-search {
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 40px;
   margin: 0;
@@ -134,7 +138,8 @@ body {
   position: relative;
 }
 .contacts-search__label {
-  position: absolute;
+  z-index: 1000;
+  margin: 0;
   font-size: 1em;
   left: 0;
 }
