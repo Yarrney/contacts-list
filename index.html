@@ -7,7 +7,6 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Less preprossor used here just for testing/deomstration purposes.  Should be removed for production -->
-    <script src="less.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -29,7 +28,10 @@
         <!-- SEARCH BAR -->
         <form class="contacts-search" action="#" method="post">
           <i class="fa fa-search"></i>
-          <input type="search" id="search" placeholder="Search..." />
+          <div class="contacts-search__field">
+            <input class="contacts-search__input" id="contact-search" type="text" required/>
+            <label class ="contacts-search__label" for="contact-search">Search...</label>
+          </div>
         </form>
 
       </div> <!-- end contact-list -->

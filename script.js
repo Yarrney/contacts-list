@@ -5,7 +5,7 @@ var contactPopulate = function (contactList) {
   for (var i = 0; i < contactList.length; i++) {
     contact = contactList[i];
     if (contact.profileimage === undefined) {
-      profilePic = '<span class="contact-placeholder">'
+      profilePic = '<span class="contact__placeholder">'
         +contact.username.substring(0,1) //get first letter of name
         +'</span>';
     }
@@ -15,15 +15,15 @@ var contactPopulate = function (contactList) {
 
     document.getElementById('contacts-list').innerHTML +=
     '<li class="contact">'
-      +'<div class="contact-image">'
+      +'<div class="contact__image">'
         +profilePic
       +'</div>'
-      +'<p class="contact-name">'+contact.username+'</p>'
-      +'<div class="contact-status-'+contact.status.toLowerCase()+'"></div>'
-    +'</li>'
+      +'<p class="contact__name">'+contact.username+'</p>'
+      +'<div class="contact__status--'+contact.status.toLowerCase()+'"></div>'
+    +'</li>';
 
   }
-}
+};
 
 // Async request
 function XHR(callback){

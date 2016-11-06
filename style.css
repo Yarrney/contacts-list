@@ -9,6 +9,9 @@ body {
 /* Layout */
 /* Layout styles specified in module styling */
 /* Module */
+.contacts-border {
+  border: 2px solid #E4E2E0;
+}
 .contacts-module {
   bottom: 0;
   position: fixed;
@@ -36,7 +39,7 @@ body {
   overflow: scroll;
   height: 90%;
 }
-.contacts-container > ul {
+.contacts-container ul {
   margin: 0;
   padding: 0;
 }
@@ -46,7 +49,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  border: 2px solid #b4b4b6;
+  border: 2px solid #E4E2E0;
   border-top: none;
 }
 .contact:last-child {
@@ -55,7 +58,7 @@ body {
 .contact:nth-child(even) {
   background-color: #F0EFEC;
 }
-.contact-image {
+.contact__image {
   width: 58px;
   height: 58px;
   border: none;
@@ -65,33 +68,20 @@ body {
   background-color: #31343E;
   color: white;
 }
-.contact-placeholder {
+.contact__placeholder {
   font-size: 1.5rem;
   line-height: 58px;
 }
-.contact-name {
+.contact__name {
   flex: 2;
   margin-left: 1rem;
+  font-weight: bold;
 }
-.contact-status {
+.contact__status {
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 0.3rem;
   margin-right: 1rem;
-}
-.contact-status-online {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 0.3rem;
-  margin-right: 1rem;
-  background-color: #67B642;
-}
-.contact-status-offline {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 0.3rem;
-  margin-right: 1rem;
-  background-color: #B5B5B5;
 }
 .contacts-search {
   display: inline-flex;
@@ -100,8 +90,9 @@ body {
   width: 100%;
   height: 40px;
   margin: 0;
+  color: #9A9A98;
   background-color: #F2F1EE;
-  border: 2px solid #b4b4b6;
+  border: 2px solid #E4E2E0;
   border-bottom: none;
   /* box-sizing:border-box used to maintain width*/
   -moz-box-sizing: border-box;
@@ -109,22 +100,70 @@ body {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-.contacts-search > input {
-  flex: 16;
-  padding: 0;
-  background-color: inherit;
-  border: none;
-  font-size: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.contacts-search:hover {
+  color: #404040;
+  background-color: white;
 }
-.contacts-search > i {
+.contacts-search i {
   flex: 1;
   padding-left: 5%;
-  color: #9A9A98;
+}
+.contacts-search__field {
+  flex: 13;
+  background-color: inherit;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.contacts-search__label {
+  position: absolute;
+  top: 25%;
+  line-height: 1.3;
+  left: 0;
+}
+.contacts-search__input {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: normal;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.contacts-search__input:focus {
+  outline: none;
+}
+.contacts-search__input:focus + label {
+  display: none;
+}
+.contacts-search__input:valid {
+  background-color: inherit;
+}
+.contacts-search__input:valid + label {
+  display: none;
 }
 /* State */
 .contacts-hide {
   height: 0;
+}
+.contact__status--online {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  margin-right: 1rem;
+  background-color: #67B642;
+}
+.contact__status--offline {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  margin-right: 1rem;
+  background-color: #B5B5B5;
 }
 /* Theme */
