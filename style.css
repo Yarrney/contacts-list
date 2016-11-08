@@ -31,6 +31,11 @@ body {
   z-index: 99999;
 }
 .contacts-module > header {
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
   padding-left: 10%;
   background-color: #272933;
   color: white;
@@ -66,7 +71,7 @@ body {
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .contacts-container {
-    height: calc(100% -  80px);
+    height: calc(100% -  80px) \9;
   }
 }
 .contact {
@@ -80,6 +85,7 @@ body {
   border: 2px solid #E4E2E0;
   border-top: none;
   background-color: white;
+  font-size: 1em;
 }
 .contact:last-child {
   border-bottom: none;
@@ -209,9 +215,5 @@ body {
   display: none;
 }
 .contacts-search__input:invalid {
-  background-color: inherit;
-  color: inherit;
-}
-.contacts-search__input:invalid + label {
-  display: none;
+  outline: none;
 }

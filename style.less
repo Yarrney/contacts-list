@@ -70,6 +70,11 @@ body {
   z-index:99999;
 
   &>header {
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    display: flex;
+    align-items: center;
+    min-height: @search-height;
     padding-left: 10%;
     background-color: @contacts-header-background;
     color: @contacts-header-text;
@@ -114,10 +119,12 @@ body {
   }
 }
 
+@ie10: \9;
+
 // IE 10 Hack - doubled for correct alignment
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .contacts-container {
-    height: calc(~"100% - "2 * @search-height;);
+    height: calc(~"100% - "2 * @search-height)@ie10;
   }
 }
 
@@ -133,6 +140,7 @@ body {
   .contacts-border;
   border-top: none;
   background-color: @contact-background;
+  font-size: 1em;
 
   &:last-child{
     border-bottom: none;
@@ -278,10 +286,6 @@ body {
     }
   }
   &:invalid{ // for Firefox
-    background-color: inherit;
-    color: inherit;
-    +label {
-      display: none;
-    }
+    outline: none;
   }
 }
