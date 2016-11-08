@@ -37,6 +37,7 @@ body {
   text-align: left;
 }
 .hide-container {
+  background-color: white;
   height: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -105,8 +106,8 @@ body {
   margin-right: 1rem;
 }
 .contacts-search {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
@@ -136,12 +137,22 @@ body {
   flex: 13;
   background-color: inherit;
   position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 .contacts-search__label {
-  z-index: 1000;
-  margin: 0;
+  position: absolute;
   font-size: 1em;
+  margin: auto;
+  height: 20px;
+  line-height: 1.5em;
+  top: 0;
   left: 0;
+  bottom: 0;
 }
 .contacts-search__input {
   padding: 0;
@@ -152,7 +163,7 @@ body {
   font-weight: normal;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  position: absolute;
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
 }

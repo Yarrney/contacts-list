@@ -77,6 +77,7 @@ body {
 
 // Hide container (for css transition)
 .hide-container {
+  background-color: @contact-background;
   height: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -160,14 +161,12 @@ body {
 }
 
 .contacts-search {
-  display: -ms-inline-flexbox; // IE10
-  display: inline-flex;
+  display: -ms-flexbox; // IE10
+  display: flex;
 
   -ms-flex-align: center;
   align-items:center;
-  //
-  // -ms-flex-item-align: end;
-  // align-self: flex-end;
+
   width: 100%;
   height: @search-height;
   margin: 0;
@@ -200,22 +199,23 @@ body {
   background-color: inherit;
   position: relative;
 
-  // display: -ms-flexbox; // IE10
-  // display: flex;
+  display: -ms-flexbox; // IE10
+  display: flex;
 
-  // -ms-flex-align: center; // IE10
-  // align-items: center;
+  -ms-flex-align: center; // IE10
+  align-items: center;
 
-  // -ms-flex-pack: start; // IE10
-  // justify-content: flex-start;
+  -ms-flex-pack: start; // IE10
+  justify-content: flex-start;
 }
 
 .contacts-search__label {
-  // position: absolute;
-  z-index: 1000;
-  margin: 0;
+  position: absolute;
   font-size: 1em;
-  left: 0;
+  margin: auto;
+  height: @search-height / 2;
+  line-height: 1.5em;
+  top: 0; left: 0; bottom: 0;
 }
 
 .contacts-search__input {
@@ -227,7 +227,7 @@ body {
   font-weight: normal;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  position: absolute;
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
 
