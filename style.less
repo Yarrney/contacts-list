@@ -1,129 +1,139 @@
-/* Base */
+// Contacts widget style
+// Author: Alex Arney
+// This stylesheet is arranged as a hybrid of both SMACSS and BEM architectures.  Properties are ordered by: Box, Border, Background, Text, and Other.
+
+/***********************
+ Base Styling - Testing
+************************/
+// Base styles should be inherited from the parent web page of the module.  Any listed below are for testing purposes.
 
 html{
   height: 100%;
-  margin:0;
 }
 
 body {
-  font-family: sans-serif, Arial;
   min-height: 100%;
+  font-family: sans-serif, Arial;
 }
 
-/* Layout */
-/* Layout styles specified in module styling */
-
-/* Module */
-// Declare Sizes
+/***********************
+ Contacts Widget Module
+************************/
+// VARIABLES AND UNIVERSAL MODULE STYLES
+// Box components
 @module-width: 280px;
 @module-height: 400px;
 @search-height: 40px;
 @contact-image-square: 40px;
 
-// Declare Colours
-@offline-indicator: #B5B5B5;
-@online-indicator: #67B642;
-
-@image-placeholder-text: white;
-@image-placeholder-background: #31343E;
-
-@contacts-header-text: white;
-@contacts-header-background: #272933;
-
-@search-text: #9A9A98;
-@search-background: #F2F1EE;
-@search-text-hover: #404040;
-@search-background-hover: white;
-
-@contact-background: white;
-@contact-background-alt: #F0EFEC;
+// Border Components
 @contact-border: #E4E2E0;
-@contact-text: #21242B;
-
-// General Module Styles
 .contacts-border{
   border: 2px solid @contact-border;
 }
 
-// Contact module container
+// Background Components
+@contact-background: white;
+@contact-background-alt: #F0EFEC;
+@contacts-header-background: #272933;
+@image-placeholder-background: #31343E;
+@search-background: #F2F1EE;
+@search-background-hover: white;
+
+// Text Components
+@contact-text: #21242B;
+@contacts-header-text: white;
+@image-placeholder-text: white;
+@search-text: #9A9A98;
+@search-text-hover: #404040;
+
+// Other Components
+@offline-indicator: #B5B5B5;
+@online-indicator: #67B642;
+
+// MODULE STYLING
+// Module Container
 .contacts-module {
-  bottom: 0;
-  position: fixed;
-  z-index:99999;
-  right: 3rem;
-
-  display: -ms-flexbox; // IE10
-  display: flex;
-
-  -ms-flex-direction: column; // IE10
-  flex-direction: column;
-
-  -ms-flex-pack: end; // IE10
-  justify-content: flex-end;
-
   width: @module-width;
   height: @module-height;
-
+  bottom: 0;
+  right: 2rem;
+  position: fixed;
+  display: -ms-flexbox; // IE10
+  -ms-flex-pack: end; // IE10
+  -ms-flex-direction: column; // IE10
   -ms-flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
   flex: 1;
-  header {
+  z-index:99999;
+
+  &>header {
+    padding-left: 10%;
     background-color: @contacts-header-background;
     color: @contacts-header-text;
-    padding-left: 10%;
-      h4 {
+
+      &>h4 {
         margin: 0.8rem 0 0.8rem 0;
+        font-size: 1em;
         text-align: left;
       }
-    }
+  }
 }
 
 // Hide container (for css transition)
 .hide-container {
-  background-color: @contact-background;
   height: 100%;
+  background-color: @contact-background;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
-// Contacts List (container and user items)
+// Modified state once module is 'hidden'
+.contacts-hide {
+  height: 0;
+}
+
+// Container for listed contacts (from JS)
 .contacts-container {
+  height: calc(~"100% - "@search-height);
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(~"100% - "@search-height);
-  ul {
+
+  &>ul {
     margin: 0;
     padding: 0;
   }
+
   ::-webkit-scrollbar {
-      width: 0px;  /* remove scrollbar space */
-      background: transparent;  /* optional: just make scrollbar invisible */
+      width: 0px;  // remove scrollbar space
+      background: transparent;  //just make scrollbar invisible
   }
 }
 
-// IE 10 Hack
+// IE 10 Hack - doubled for correct alignment
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .contacts-container {
     height: calc(~"100% - "2 * @search-height;);
   }
 }
 
+// Individual contact row
 .contact {
   padding-left: 2.5%;
-
   display: -ms-flexbox; // IE10
-  display: flex;
-
   -ms-flex-align: center; // IE10
-  align-items: center;
-
   -ms-flex-pack: justify; // IE10
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-
-  background-color: @contact-background;
   .contacts-border;
   border-top: none;
+  background-color: @contact-background;
+
   &:last-child{
     border-bottom: none;
   }
@@ -132,21 +142,20 @@ body {
   }
 }
 
+// Contact image and placeholder specs
 .contact__image {
   width: @contact-image-square;
   height: @contact-image-square;
-  border: none;
   margin: 0.5rem;
-
   display: -ms-flexbox; // IE10
-  display: flex;
-
   -ms-flex-pack: center; // IE10
+  display: flex;
   justify-content: center;
-
+  border: none;
   background-color: @image-placeholder-background;
   color: @image-placeholder-text;
-  img {
+
+  &>img {
     width: 100%;
     height: auto;
   }
@@ -158,91 +167,100 @@ body {
 }
 
 .contact__name {
-  text-align: left;
-  font-size: 1em;
-  margin: 0;
+  margin: 0 0 0 0.5rem;
   -ms-flex: 2;
   flex: 2;
-  margin-left: 0.5em;
+  text-align: left;
+  font-size: 1em;
   font-weight: bold;
   color: @contact-text;
 }
 
+// Online/Offline Indicator
 .contact__status {
   width: 0.6rem;
   height: 0.6rem;
-  border-radius: 0.3rem;
   margin-right: 1rem;
+  border-radius: 0.3rem;
 }
 
+.contact__status--online {
+  .contact__status;
+  background-color: @online-indicator;
+}
+
+.contact__status--offline {
+  .contact__status;
+  background-color: @offline-indicator;
+}
+
+// Search Bar Container
 .contacts-search {
-  display: -ms-flexbox; // IE10
-  display: flex;
-
-  -ms-flex-align: center;
-  align-items:center;
-
   width: 100%;
   height: @search-height;
   margin: 0;
-  color: @search-text;
-  background-color: @search-background;
-  .contacts-border;
-  border-bottom: none;
-
-  /* box-sizing:border-box used to maintain width*/
+  display: -ms-flexbox; // IE10
+  -ms-flex-align: center; // IE10
+  display: flex;
+  align-items:center;
+  // box-sizing:border-box used to maintain width
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+  .contacts-border;
+  border-bottom: none;
+  background-color: @search-background;
+  color: @search-text;
 
   &:hover{
-    color: @search-text-hover;
     background-color: @search-background-hover;
+    color: @search-text-hover;
   }
 
-  i{
+  &>i{
     -ms-flex: 1;
     flex: 1;
     padding-left: 5%;
   }
 }
 
+// Search container - specifies html structure of input and label
 .contacts-search__field {
   -ms-flex: 13;
   flex: 13;
-  background-color: inherit;
   position: relative;
-
   display: -ms-flexbox; // IE10
-  display: flex;
-
   -ms-flex-align: center; // IE10
-  align-items: center;
-
   -ms-flex-pack: start; // IE10
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
+  background-color: inherit;
 }
 
+// Search label placed on-top of input box
+// In this instance, the flex container is broken by absolute position, so vertical alignment completed using margin:auto
 .contacts-search__label {
   position: absolute;
-  font-size: 1em;
   margin: auto;
   height: @search-height / 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
   line-height: 1.5em;
-  top: 0; left: 0; bottom: 0;
+  font-size: 1em;
 }
 
+// Search input is hidden/transparent until active
 .contacts-search__input {
-  padding: 0;
-  background-color: transparent;
+  position: relative;
+  padding: 0.5rem 0 0.5rem 0;
   border: none;
   border-radius: 0;
+  background-color: transparent;
   font-size: 1em;
   font-weight: normal;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
 
@@ -259,21 +277,11 @@ body {
       display: none;
     }
   }
+  &:invalid{ // for Firefox
+    background-color: inherit;
+    color: inherit;
+    +label {
+      display: none;
+    }
+  }
 }
-
-/* State */
-.contacts-hide {
-  height: 0;
-}
-
-.contact__status--online {
-  .contact__status;
-  background-color: @online-indicator;
-}
-
-.contact__status--offline {
-  .contact__status;
-  background-color: @offline-indicator;
-}
-
-/* Theme */
