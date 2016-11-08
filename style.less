@@ -105,6 +105,8 @@ body {
 // Container for listed contacts (from JS)
 .contacts-container {
   height: calc(~"100% - "@search-height);
+  -ms-overflow-style: -ms-autohiding-scrollbar; // IE
+  overflow: -moz-scrollbars-none;  // Firefox
   overflow-y: scroll;
   overflow-x: hidden;
 
@@ -119,12 +121,14 @@ body {
   }
 }
 
-@ie10: \9;
 
-// IE 10 Hack - doubled for correct alignment
+// IE 10/11 Hack - doubled for correct alignment
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .contacts-container {
-    height: calc(~"100% - "2 * @search-height)@ie10;
+    height: calc(~"100% - "2 * @search-height); //IE10
+  }
+  *::-ms-backdrop, .contacts-container {
+    height: calc(~"100% - "@search-height); //IE11 Reset
   }
 }
 
@@ -273,7 +277,7 @@ body {
   -moz-appearance: none;
 
   &:focus{
-    outline: none;
+    box-shadow: none;
     + label {
       display: none;
     }
@@ -285,7 +289,7 @@ body {
       display: none;
     }
   }
-  &:invalid{ // for Firefox
-    outline: none;
+  &:required{ // for Firefox
+    box-shadow: none;
   }
 }
