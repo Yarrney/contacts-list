@@ -1,6 +1,7 @@
 /* Base */
 html {
   height: 100%;
+  margin: 0;
 }
 body {
   font-family: sans-serif, Arial;
@@ -15,6 +16,7 @@ body {
 .contacts-module {
   bottom: 0;
   position: fixed;
+  z-index: 99999;
   right: 3rem;
   display: -ms-flexbox;
   display: flex;
@@ -45,12 +47,24 @@ body {
   transition: all 0.5s ease-in-out;
 }
 .contacts-container {
-  overflow: scroll;
-  height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100% -  40px);
 }
 .contacts-container ul {
   margin: 0;
   padding: 0;
+}
+.contacts-container ::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .contacts-container {
+    height: calc(100% -  80px);
+  }
 }
 .contact {
   padding-left: 2.5%;

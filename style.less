@@ -2,6 +2,7 @@
 
 html{
   height: 100%;
+  margin:0;
 }
 
 body {
@@ -48,6 +49,7 @@ body {
 .contacts-module {
   bottom: 0;
   position: fixed;
+  z-index:99999;
   right: 3rem;
 
   display: -ms-flexbox; // IE10
@@ -87,11 +89,23 @@ body {
 
 // Contacts List (container and user items)
 .contacts-container {
-  overflow: scroll;
-  height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(~"100% - "@search-height);
   ul {
     margin: 0;
     padding: 0;
+  }
+  ::-webkit-scrollbar {
+      width: 0px;  /* remove scrollbar space */
+      background: transparent;  /* optional: just make scrollbar invisible */
+  }
+}
+
+// IE 10 Hack
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .contacts-container {
+    height: calc(~"100% - "2 * @search-height;);
   }
 }
 
@@ -145,10 +159,11 @@ body {
 
 .contact__name {
   text-align: left;
+  font-size: 1em;
   margin: 0;
   -ms-flex: 2;
   flex: 2;
-  margin-left: 0.5rem;
+  margin-left: 0.5em;
   font-weight: bold;
   color: @contact-text;
 }
