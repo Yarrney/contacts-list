@@ -9,11 +9,23 @@
 
 html{
   height: 100%;
+  margin: 0;
+
 }
 
 body {
   min-height: 100%;
   font-family: sans-serif, Arial;
+}
+
+.main-content {
+  margin: 0 auto 0 auto;
+  display: block;
+  width: 700px;
+  height: 100vh;
+  padding-top: 20em;
+  background-color: red;
+  text-align: center;
 }
 
 /***********************
@@ -25,6 +37,10 @@ body {
 @module-height: 400px;
 @search-height: 40px;
 @contact-image-square: 40px;
+
+@main-content-width: 700px; //assume this is the width of the central content
+@module-right-position: 20px;
+@screen-width: @main-content-width + 2 * (@module-right-position + @module-width);
 
 // Border Components
 @contact-border: #E4E2E0;
@@ -57,7 +73,7 @@ body {
   width: @module-width;
   height: @module-height;
   bottom: 0;
-  right: 2rem;
+  right: @module-right-position;
   position: fixed;
   display: -ms-flexbox; // IE10
   -ms-flex-pack: end; // IE10
@@ -95,6 +111,12 @@ body {
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: (@screen-width)) {
+  .always-hide {
+    height: 0;
+  }
 }
 
 // Modified state once module is 'hidden'
